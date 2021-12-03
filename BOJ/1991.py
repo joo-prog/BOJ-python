@@ -10,27 +10,24 @@ for _ in range(n):
 
 def preorder(start):
     print(start, end='')
-    if start in dic.keys():
-        for item in dic[start]:
-            if item != '.':
-               preorder(item)
+    for item in dic[start]:
+        if item != '.':
+            preorder(item)
 
 def inorder(start):
-    if start in dic.keys():
-        tmp=1
-        for item in dic[start]:
-            if item !='.':
-                inorder(item)
-            if tmp==1:
-                print(start, end='')
-                tmp+=1
+    tmp=1
+    for item in dic[start]:
+        if item !='.':
+            inorder(item)
+        if tmp==1:
+            print(start, end='')
+            tmp+=1
 
 def postorder(start):
-    if start in dic.keys():
-        for item in dic[start]:
-            if item !='.':
-                postorder(item)
-        print(start, end='')
+    for item in dic[start]:
+        if item !='.':
+            postorder(item)
+    print(start, end='')
 
 preorder('A')
 print()
